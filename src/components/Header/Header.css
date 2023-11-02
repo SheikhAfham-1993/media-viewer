@@ -1,0 +1,8 @@
+.main {
+  display: flex;
+  background: #ffffff;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: #7d7d7d 0px 1px 5px;
+}
