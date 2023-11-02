@@ -1,21 +1,26 @@
-import {RouterProvider, createBrowserRouter} from "react-router-dom"
-import SearchPage from "./pages/SearchPage";
-import SingleMediaView from "./pages/SingleMediaView";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import SingleMediaView from './pages/SingleMediaView'
+import RootLayout from './pages/RootLayout'
+import SearchPage from './pages/SearchPage/SearchPage'
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <SearchPage/>
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
+        index: true,
+        element: <SearchPage />,
+      },
+      {
+        path: '/singlemediaview/:id',
+        element: <SingleMediaView />,
+      },
+    ],
   },
-  {
-    path: "/singlemediaview/:id",
-    element: <SingleMediaView/>
-  }
 ])
 function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export default App
