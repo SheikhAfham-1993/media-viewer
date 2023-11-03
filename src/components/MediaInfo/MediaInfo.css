@@ -36,7 +36,7 @@
 .table {
   border-spacing: 0 15px;
 }
-.table > tr > th {
+.table > tbody > tr > th {
   text-align: left;
   display: flex;
   align-items: flex-start;
