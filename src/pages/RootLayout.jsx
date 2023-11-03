@@ -4,7 +4,7 @@ import '../index.css'
 
 const RootLayout = () => {
   return (
-    <div>
+    <div className="root-content">
       <Header />
       <main className="main-content">
         <Outlet />
