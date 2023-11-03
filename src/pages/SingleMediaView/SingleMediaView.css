@@ -1,10 +1,19 @@
 .single-media-container {
   display: flex;
-  height: 100%;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+/* Desktop */
+@media (min-width: 1000px) {
+  .single-media-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+  }
 }
 
 .hero-content {
+  grid-column: 1 / span 2;
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;

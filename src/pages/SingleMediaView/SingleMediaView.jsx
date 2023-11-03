@@ -103,7 +103,6 @@ const SingleMediaView = () => {
             <td>{mockMediaData.caption}</td>
           </tr>
         </table>
-        <p></p>
       </div>
     </div>
   )
