@@ -54,25 +54,56 @@ const SingleMediaView = () => {
   return (
     <div className="single-media-container">
       <div className="hero-content">
-        <h3>{mockMediaData.title}</h3>
+        <span className="title">{mockMediaData.title}</span>
+        <span>{mockMediaData.caption}</span>
         <img alt="single-media" src={mockMediaData.mediasrc} />
       </div>
 
-      <div>
-        <p>{mockMediaData.caption}</p>
-        <p>{mockMediaData.creationdate}</p>
-        <p>{mockMediaData.creator}</p>
-        <p>
-          height: {mockMediaData.height} x width: {mockMediaData.width}
-        </p>
-        {mockMediaData.usagelicences.map((licence) => (
-          <div key={licence.licenseid}>
-            <p>{licence.name}</p>
-            <p>
-              {licence.price} {licence.currency}
-            </p>
-          </div>
-        ))}
+      <div className="media-detail">
+        <div className="media-license-container">
+          {mockMediaData.usagelicences.map((licence, index) => (
+            <div key={licence.licenseid}>
+              <div className="media-license">
+                <span className="title-license">{licence.name}</span>
+                <span className="credits">{licence.credits} credits</span>
+              </div>
+              <p className="price">
+                Price: {licence.price} {licence.currency}
+              </p>
+              {index === 0 ? <hr /> : null}
+            </div>
+          ))}
+        </div>
+
+        <hr />
+
+        <table className="table">
+          <tr>
+            <th>Creator</th>
+            <td>{mockMediaData.creator}</td>
+          </tr>
+          <tr>
+            <th>Creation date</th>
+            <td>
+              {new Date(mockMediaData.creationdate).toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </td>
+          </tr>
+          <tr>
+            <th>Size</th>
+            <td>
+              {mockMediaData.height} x {mockMediaData.width} PIXELS
+            </td>
+          </tr>
+          <tr>
+            <th>Caption</th>
+            <td>{mockMediaData.caption}</td>
+          </tr>
+        </table>
+        <p></p>
       </div>
     </div>
   )
