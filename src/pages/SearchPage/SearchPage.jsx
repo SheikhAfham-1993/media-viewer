@@ -22,11 +22,9 @@ const SearchPage = () => {
    * @return {Promise} - A promise that resolves with the fetched media data.
    */
   const fetchMediaData = async (query = '') => {
-    let url =
-      'https://1780bf9a-10a6-4235-8605-39539ff6a76b.mock.pstmn.io/search'
-    if (query) {
-      url = `https://1780bf9a-10a6-4235-8605-39539ff6a76b.mock.pstmn.io/search?query=${query}`
-    }
+    let url = 'search'
+    if (query) url = `search?query=${query}`
+
     setIsLoading(true)
     let response = await fetchMedia(url)
     setMedia(response.data.media)
@@ -40,7 +38,7 @@ const SearchPage = () => {
 
   return (
     <div className="container">
-      <SearchMedia fetchMedia={fetchMediaData} />
+      <SearchMedia fetchMediaData={fetchMediaData} />
       {isLoading ? <Loader /> : <Gallery media={media} />}
     </div>
   )
