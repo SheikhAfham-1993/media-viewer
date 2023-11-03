@@ -1,3 +1,4 @@
+import React from 'react'
 import './MediaInfo.css'
 
 /**
@@ -7,6 +8,30 @@ import './MediaInfo.css'
  * @return {JSX.Element} The JSX element representing the rendered media information.
  */
 const MediaInfo = ({ media }) => {
+  // Converting to an array to avoid unnecessary html tags
+  let detailInfo = [
+    {
+      label: 'Creator',
+      value: media.creator,
+    },
+    {
+      label: 'Creation date',
+      value: new Date(media.creationdate).toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }),
+    },
+    {
+      label: 'Size',
+      value: `${media.height} x ${media.width} PIXELS`,
+    },
+    {
+      label: 'Caption',
+      value: media.caption,
+    },
+  ]
+
   return (
     <div className="media-detail">
       <div className="media-license-container">
@@ -16,44 +41,22 @@ const MediaInfo = ({ media }) => {
               <span className="license-title">{licence.name}</span>
               <span className="credits">{licence.credits} credits</span>
             </div>
-            <p className="price">
+            <p className="bold-labels">
               Price: {licence.price} {licence.currency}
             </p>
             {index === 0 ? <hr /> : null}
           </div>
         ))}
       </div>
-
       <hr />
-
-      <table className="table">
-        <tbody>
-          <tr>
-            <th>Creator</th>
-            <td>{media.creator}</td>
-          </tr>
-          <tr>
-            <th>Creation date</th>
-            <td>
-              {new Date(media.creationdate).toLocaleString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </td>
-          </tr>
-          <tr>
-            <th>Size</th>
-            <td>
-              {media.height} x {media.width} PIXELS
-            </td>
-          </tr>
-          <tr>
-            <th>Caption</th>
-            <td>{media.caption}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="media-info-container">
+        {detailInfo.map((detail, index) => (
+          <React.Fragment key={index}>
+            <span className="bold-labels">{detail.label}</span>
+            <span className="media-info-container-item">{detail.value}</span>
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   )
 }

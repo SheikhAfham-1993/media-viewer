@@ -2,7 +2,7 @@
   padding: 1rem;
 }
 
-.price {
+.bold-labels {
   font-size: 1rem;
   font-weight: 600;
 }
@@ -16,10 +16,12 @@
   font-size: 0.8rem;
   border: 0.5px solid #cccccc;
 }
+
 .media-license {
   display: flex;
   flex-direction: row;
 }
+
 .license-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -33,12 +35,12 @@
   font-weight: 600;
 }
 
-.table {
-  border-spacing: 0 15px;
+.media-info-container {
+  display: grid;
+  row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
-.table > tbody > tr > th {
-  text-align: left;
-  display: flex;
-  align-items: flex-start;
-  width: 150px;
+
+.media-info-container-item {
+  grid-column: 2 / span 2;
 }
