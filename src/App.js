@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import SingleMediaView from './pages/SingleMediaView'
+import SingleMediaView from './pages/SingleMediaView/SingleMediaView'
 import RootLayout from './pages/RootLayout'
 import SearchPage from './pages/SearchPage/SearchPage'
 
