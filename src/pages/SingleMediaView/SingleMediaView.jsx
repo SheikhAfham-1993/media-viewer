@@ -1,4 +1,5 @@
 // import { useParams } from 'react-router-dom'
+import MediaInfo from '../../components/MediaInfo/MediaInfo'
 import './SingleMediaView.css'
 const SingleMediaView = () => {
   const mockMediaData = {
@@ -16,8 +17,8 @@ const SingleMediaView = () => {
     mediaid: 115446019,
     mediaidpadded: '0115446019',
     mediaprev: null,
-    mediasrc: 'https://www.imago-images.com/bild/st/0115446019/m.jpg',
-    mediathumb: 'https://www.imago-images.com/bild/st/0115446019/s.jpg',
+    mediasrc: 'https://www.imago-images.com/bild/st/0138384880/w.jpg',
+    mediathumb: 'https://www.imago-images.com/bild/st/0138384880/w.jpg',
     mediatype: 'image',
     similarmedia: null,
     source: 'st',
@@ -56,54 +57,16 @@ const SingleMediaView = () => {
       <div className="hero-content">
         <span className="title">{mockMediaData.title}</span>
         <span>{mockMediaData.caption}</span>
-        <img alt="single-media" src={mockMediaData.mediasrc} />
-      </div>
-
-      <div className="media-detail">
-        <div className="media-license-container">
-          {mockMediaData.usagelicences.map((licence, index) => (
-            <div key={licence.licenseid}>
-              <div className="media-license">
-                <span className="title-license">{licence.name}</span>
-                <span className="credits">{licence.credits} credits</span>
-              </div>
-              <p className="price">
-                Price: {licence.price} {licence.currency}
-              </p>
-              {index === 0 ? <hr /> : null}
-            </div>
-          ))}
+        <div className="image-container">
+          <img
+            className="hero-media"
+            alt="single-media"
+            src={mockMediaData.mediasrc}
+          />
         </div>
-
-        <hr />
-
-        <table className="table">
-          <tr>
-            <th>Creator</th>
-            <td>{mockMediaData.creator}</td>
-          </tr>
-          <tr>
-            <th>Creation date</th>
-            <td>
-              {new Date(mockMediaData.creationdate).toLocaleString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </td>
-          </tr>
-          <tr>
-            <th>Size</th>
-            <td>
-              {mockMediaData.height} x {mockMediaData.width} PIXELS
-            </td>
-          </tr>
-          <tr>
-            <th>Caption</th>
-            <td>{mockMediaData.caption}</td>
-          </tr>
-        </table>
       </div>
+
+      <MediaInfo media={mockMediaData} />
     </div>
   )
 }
