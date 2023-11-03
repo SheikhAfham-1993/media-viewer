@@ -4,16 +4,9 @@
   }
 }
 
-/* Mobile */
+/* Mobile and Tablet */
 .media-content {
-  padding: 0rem 0rem;
-}
-
-/* Tablet */
-@media (min-width: 600px) {
-  .media-content {
-    padding: 0rem 2rem;
-  }
+  padding: 0rem 2rem;
 }
 
 /* Desktop */
@@ -62,8 +55,9 @@
 
 .media-container {
   display: flex;
-  justify-content: flex-start;
+  max-width: 100%;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
