@@ -1,5 +1,6 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import './SearchMedia.css'
+import { useRef } from 'react'
 
 /**
  * Renders a search input field with an optional clear button.
@@ -8,10 +9,12 @@ import './SearchMedia.css'
  * @return {JSX.Element} The rendered search input field.
  */
 const SearchMedia = ({ fetchMedia }) => {
+  const searchInputRef = useRef(null)
   return (
     <div className="search-container">
       <div className="input-container">
         <input
+          ref={searchInputRef}
           className="search-input"
           type="text"
           placeholder="Search.."
@@ -19,7 +22,10 @@ const SearchMedia = ({ fetchMedia }) => {
             if (e.key === 'Enter') fetchMedia(e.target.value)
           }}
         />
-        <XMarkIcon className="clear-input" />
+        <XMarkIcon
+          onClick={() => (searchInputRef.current.value = '')}
+          className="clear-input"
+        />
       </div>
     </div>
   )
