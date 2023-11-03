@@ -1,0 +1,22 @@
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #f4f3f0;
+  padding: 2rem;
+}
+
+.input-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.clear-input {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
