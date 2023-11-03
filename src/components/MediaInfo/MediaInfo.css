@@ -1,0 +1,44 @@
+.media-detail {
+  padding: 1rem;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.media-license-container {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background: #eae7e2;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  border: 0.5px solid #cccccc;
+}
+.media-license {
+  display: flex;
+  flex-direction: row;
+}
+.license-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.credits {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.table {
+  border-spacing: 0 15px;
+}
+.table > tr > th {
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  width: 150px;
+}
