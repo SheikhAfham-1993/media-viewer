@@ -1,4 +1,11 @@
 import './MediaInfo.css'
+
+/**
+ * Renders the media information.
+ *
+ * @param {Object} media - The media object containing the information that a user has searched for.
+ * @return {JSX.Element} The JSX element representing the rendered media information.
+ */
 const MediaInfo = ({ media }) => {
   return (
     <div className="media-detail">
@@ -20,30 +27,32 @@ const MediaInfo = ({ media }) => {
       <hr />
 
       <table className="table">
-        <tr>
-          <th>Creator</th>
-          <td>{media.creator}</td>
-        </tr>
-        <tr>
-          <th>Creation date</th>
-          <td>
-            {new Date(media.creationdate).toLocaleString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </td>
-        </tr>
-        <tr>
-          <th>Size</th>
-          <td>
-            {media.height} x {media.width} PIXELS
-          </td>
-        </tr>
-        <tr>
-          <th>Caption</th>
-          <td>{media.caption}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <th>Creator</th>
+            <td>{media.creator}</td>
+          </tr>
+          <tr>
+            <th>Creation date</th>
+            <td>
+              {new Date(media.creationdate).toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </td>
+          </tr>
+          <tr>
+            <th>Size</th>
+            <td>
+              {media.height} x {media.width} PIXELS
+            </td>
+          </tr>
+          <tr>
+            <th>Caption</th>
+            <td>{media.caption}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   )

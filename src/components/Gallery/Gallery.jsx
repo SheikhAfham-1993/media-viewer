@@ -1,5 +1,12 @@
 import { Link } from 'react-router-dom'
 import './Gellery.css'
+
+/**
+ * Renders a gallery component with the given media.
+ *
+ * @param {Array} media - Media object which is selected from the search page.
+ * @return {JSX.Element} The rendered gallery component.
+ */
 const Gallery = ({ media }) => {
   return (
     <div className="media-container media-content">
