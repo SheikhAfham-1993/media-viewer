@@ -1,0 +1,29 @@
+@media only screen and (max-width: 600px) {
+  img {
+    width: 100%;
+  }
+}
+
+/* Mobile and Tablet */
+.media-content {
+  padding: 0rem 2rem;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .media-content {
+    padding: 0rem 5rem;
+  }
+}
+.media-container {
+  display: flex;
+  max-width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.media {
+  margin: 0.5rem;
+  height: 300px;
+}
