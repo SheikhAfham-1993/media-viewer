@@ -28,7 +28,7 @@ const SingleMediaView = () => {
 export default SingleMediaView
 
 export const fetchSingleMedia = async ({ params }) => {
-  let url = `https://1780bf9a-10a6-4235-8605-39539ff6a76b.mock.pstmn.io/media/${params.id}`
+  let url = `media/${params.id}`
   let response = await fetchMedia(url)
   return response.data
 }
