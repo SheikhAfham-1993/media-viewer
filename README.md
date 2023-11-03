@@ -19,6 +19,10 @@ In the project directory, you can find:
   - Where Smaller components are located that are used to build a main page
 
 - pages
+
   - Where main pages are located
+
+- routes
+  - Where all the routes are defined
 
 The project is responsive for small screens as well.
