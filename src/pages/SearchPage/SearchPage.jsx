@@ -1,9 +1,10 @@
 import './SearchPage.css'
-import { XMarkIcon } from '@heroicons/react/24/solid'
-import { Link } from 'react-router-dom'
+
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Loader from '../../components/Loader/Loader'
+import SearchMedia from '../../components/SearchMedia/SearchMedia'
+import Gallery from '../../components/Gallery/Gallery'
 
 const SearchPage = () => {
   const [media, setMedia] = useState([])
@@ -27,37 +28,8 @@ const SearchPage = () => {
 
   return (
     <div className="container">
-      <div className="search-container">
-        <div className="input-container">
-          <input
-            className="search-input"
-            type="text"
-            placeholder="Search.."
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') fetchMedia(e.target.value)
-            }}
-          />
-          <XMarkIcon className="clear-input" />
-        </div>
-      </div>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <div className="media-container media-content">
-          {media?.map((media) => (
-            <Link
-              key={media['media-id']}
-              to={`/singlemediaview/${media['media-id']}`}
-            >
-              <img
-                className="media img"
-                alt="imago-media"
-                src={`https://www.imago-images.com/${media.preview}`}
-              />
-            </Link>
-          ))}
-        </div>
-      )}
+      <SearchMedia fetchMedia={fetchMedia} />
+      {isLoading ? <Loader /> : <Gallery media={media} />}
     </div>
   )
 }
