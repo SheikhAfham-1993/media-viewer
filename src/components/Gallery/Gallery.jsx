@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './Gellery.css'
+import './Gallery.css'
 
 /**
  * Renders a gallery component with the given media.
