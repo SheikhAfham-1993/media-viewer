@@ -26,14 +26,13 @@
 .container {
   display: flex;
   flex-direction: column;
-  margin: 2rem;
 }
 
 .search-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  background: #e3dfd6;
+  background: #f4f3f0;
   padding: 2rem;
 }
 
