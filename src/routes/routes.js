@@ -17,7 +17,7 @@ export const browserRoutes = createBrowserRouter([
       {
         path: '/singlemediaview/:id',
         element: <SingleMediaView />,
-        loader: fetchSingleMedia, // fetches single media data, id will be passed automatically
+        loader: fetchSingleMedia, // fetches single media data on page load, id will be passed automatically
       },
     ],
   },
