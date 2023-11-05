@@ -22,6 +22,7 @@ const SearchMedia = ({ fetchMediaData }) => {
             if (e.key === 'Enter') fetchMediaData(e.target.value)
           }}
         />
+        {/* Button to clear the text and refetch all media */}
         <XMarkIcon
           onClick={() => (searchInputRef.current.value = '')}
           className="clear-input"

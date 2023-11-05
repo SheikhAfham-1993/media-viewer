@@ -35,6 +35,7 @@ const MediaInfo = ({ media }) => {
   return (
     <div className="media-detail">
       <div className="media-license-container">
+        {/* License information */}
         {media.usagelicences.map((licence, index) => (
           <div key={licence.licenseid}>
             <div className="media-license">
@@ -49,6 +50,7 @@ const MediaInfo = ({ media }) => {
         ))}
       </div>
       <hr />
+      {/*Other information */}
       <div className="media-info-container">
         {detailInfo.map((detail, index) => (
           <React.Fragment key={index}>

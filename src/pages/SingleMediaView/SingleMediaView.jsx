@@ -7,6 +7,8 @@ import NoMedia from '../../components/NoMedia/NoMedia'
 
 const SingleMediaView = () => {
   const singleMediaData = useLoaderData()
+
+  // Check if there is any media data available otherwise display a message
   return singleMediaData ? (
     <>
       <div className="single-media-container">
