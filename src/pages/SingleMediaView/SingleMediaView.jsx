@@ -34,6 +34,10 @@ export default SingleMediaView
 
 export const fetchSingleMedia = async ({ params }) => {
   let url = `media/${params.id}`
-  let response = await fetchMedia(url)
-  return response.data
+  try {
+    let response = await fetchMedia(url)
+    return response.data
+  } catch (error) {
+    return null
+  }
 }
