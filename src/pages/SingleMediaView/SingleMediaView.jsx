@@ -12,6 +12,7 @@ const SingleMediaView = () => {
   return singleMediaData ? (
     <>
       <div className="single-media-container">
+        {/* Section which displays the Image along with title and caption */}
         <div className="hero-content">
           <span className="title">{singleMediaData.title}</span>
           <span>{singleMediaData.caption}</span>
@@ -24,6 +25,7 @@ const SingleMediaView = () => {
           </div>
         </div>
 
+        {/* The media object containing the information that a user has searched for. */}
         <MediaInfo media={singleMediaData} />
       </div>
     </>

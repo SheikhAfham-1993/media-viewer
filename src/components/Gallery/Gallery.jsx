@@ -5,7 +5,7 @@ import NoMedia from '../NoMedia/NoMedia'
 /**
  * Renders a gallery component with the given media.
  *
- * @param {Array} media - Media object which is selected from the search page.
+ * @param {Array} media - Media object that contains all the media data.
  * @return {JSX.Element} The rendered gallery component.
  */
 const Gallery = ({ media }) => {

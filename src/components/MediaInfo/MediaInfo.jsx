@@ -50,7 +50,7 @@ const MediaInfo = ({ media }) => {
         ))}
       </div>
       <hr />
-      {/*Other information */}
+      {/* Other information */}
       <div className="media-info-container">
         {detailInfo.map((detail, index) => (
           <React.Fragment key={index}>
