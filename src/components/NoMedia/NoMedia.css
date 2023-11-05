@@ -1,0 +1,8 @@
+.no-media {
+  padding: 10rem;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
