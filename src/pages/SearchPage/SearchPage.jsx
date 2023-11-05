@@ -26,9 +26,15 @@ const SearchPage = () => {
     if (query) url = `search?query=${query}`
 
     setIsLoading(true)
-    let response = await fetchMedia(url)
-    setMedia(response.data.media)
-    setIsLoading(false)
+    try {
+      let response = await fetchMedia(url)
+      setMedia(response.data.media)
+    } catch (error) {
+      // catch any error and set the media state to an empty array
+      setMedia([])
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   //fetch media data on page load
