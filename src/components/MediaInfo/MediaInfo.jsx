@@ -8,7 +8,7 @@ import './MediaInfo.css'
  * @return {JSX.Element} The JSX element representing the rendered media information.
  */
 const MediaInfo = ({ media }) => {
-  // Converting to an array to avoid unnecessary html tags
+  // Converting detail information data to an array to avoid unnecessary html tags
   let detailInfo = [
     {
       label: 'Creator',
@@ -50,7 +50,7 @@ const MediaInfo = ({ media }) => {
         ))}
       </div>
       <hr />
-      {/* Other information */}
+      {/* Detail information */}
       <div className="media-info-container">
         {detailInfo.map((detail, index) => (
           <React.Fragment key={index}>
