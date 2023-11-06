@@ -5,6 +5,7 @@ import SingleMediaView, {
   fetchSingleMedia,
 } from '../pages/SingleMediaView/SingleMediaView'
 
+// All the routes in the application
 export const browserRoutes = createBrowserRouter([
   {
     path: '/',

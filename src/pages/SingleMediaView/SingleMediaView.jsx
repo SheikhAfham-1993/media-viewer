@@ -36,6 +36,12 @@ const SingleMediaView = () => {
 
 export default SingleMediaView
 
+/**
+ * Retrieves a single media item from the server.
+ *
+ * @param {string} params.id - The ID of the media item to fetch.
+ * @return {Promise<Object>|null} The fetched media item or null if an error occurred.
+ */
 export const fetchSingleMedia = async ({ params }) => {
   let url = `media/${params.id}`
   try {
