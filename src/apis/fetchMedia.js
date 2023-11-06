@@ -6,10 +6,10 @@ import axios from 'axios'
 const baseURL = 'https://1780bf9a-10a6-4235-8605-39539ff6a76b.mock.pstmn.io/'
 
 /**
- * Fetches media from a given URL.
+ * General function that fetches response from a given URL.
  *
- * @param {string} url - The URL of the media to fetch.
- * @return {Promise} A Promise that resolves to the response containing the fetched media.
+ * @param {string} url - The URL from where the data to be fetched.
+ * @return {Promise} A Promise that resolves to the response.
  */
 export const fetchMedia = async (url) => {
   const response = await axios.get(`${baseURL}${url}`)
